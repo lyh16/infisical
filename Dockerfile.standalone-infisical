@@ -132,11 +132,13 @@ ENV STANDALONE_BUILD true
 ENV STANDALONE_MODE true
 WORKDIR /backend
 
-ENV TELEMETRY_ENABLED true
+ENV TELEMETRY_ENABLED false
 
 EXPOSE 8080
 EXPOSE 443
 
 USER non-root-user
+
+COPY ./standalone-entrypoint.sh standalone-entrypoint.sh
 
 CMD ["./standalone-entrypoint.sh"]
